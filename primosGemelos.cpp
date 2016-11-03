@@ -10,12 +10,23 @@ int main(int argc, char** argv) {
 
 int n;
 
-for (int j=0 ;j<45;j++){
-n=funcionHBehiler(j);
-if (!esprimo(n-1)&& !esprimo(n+1)){
-cout<<"___"<<j;
+//for (int j=0 ;j<45;j++){
+//n=funcionHBehiler(j);
+//if (!esprimo(n-1)&& !esprimo(n+1)){
+//cout<<"___"<<j;
 
-}
+//}
+
+//}
+
+cout<<"ingrese primo";
+cin>>n;
+
+if(esprimo(n)==true){
+
+cout<<"primo";
+}else {
+cout<<" no primo";
 
 }
 
@@ -31,29 +42,15 @@ return 0;
 
 
 bool esprimo(int n ){
-int cont,i;
-bool bandera;
-cont=0;
-i=1;
-bandera=false;
+for (int i=2 ; i<n-1;i++){
 
-if (n>0){
-    do{
-         if (n%i==0){
-            cont++;
-         }
-       i++;
-     }while(i<=n && cont <=3);
+if(n % i==0 )
 
-if (cont==2)
-
-bandera=true;
-
+return  false;
 }
 
+return true;
 
-
-return bandera;
 
 }
 
